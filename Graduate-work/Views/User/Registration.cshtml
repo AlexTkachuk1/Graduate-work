@@ -1,0 +1,62 @@
+﻿@model RegistrationViewModel
+
+@section Head{
+    <script src ="~/js/registration.js"></script>
+ }
+
+<div class="title">
+    Регистрация:
+</div>
+<form action="/User/Registration" method="post">
+    <div class="alert-info">
+        Введите свой никнейм:
+    </div>
+
+    <div>
+        @Html.TextBoxFor(x => x.Login)
+        @Html.ValidationMessageFor(x => x.Login)
+    </div>
+
+    <div class="alert-info">
+        Введите свой пароль:
+    </div>
+
+    <div class="password">
+        <input type="password" id="password-input" placeholder="Введите пароль" name="@nameof(RegistrationViewModel.Password)">
+        <div class="flex">
+            <label><input type="checkbox" class="password-checkbox"></label>
+            <div>
+                Показать пароль
+            </div>
+        </div>
+        @Html.ValidationMessageFor(x => x.Password)
+    </div>
+
+    <div class="alert-info">
+        Введите свой пароль повторно:
+    </div>
+
+    <div class="password">
+        <input type="password" id="password-input2" placeholder="Введите пароль" name="@nameof(RegistrationViewModel.PasswordCopy)">
+        <div class="flex">
+            <label><input type="checkbox" class="password-checkbox"></label>
+            <div>
+                Показать пароль
+            </div>
+        </div>
+        @Html.ValidationMessageFor(x => x.PasswordCopy)
+    </div>
+
+    <div class="alert-info">
+        Выберите дату своего рождения:
+    </div>
+    <div>
+        <input type="date" name="@nameof(RegistrationViewModel.DateOfBirth)" min="1910-01-01">
+        @Html.ValidationMessageFor(x => x.DateOfBirth)
+    </div>
+
+    <div class="submit">
+        <input type="submit" value="зарегистрироваться" />
+    </div>
+</form>
+

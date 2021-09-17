@@ -1,0 +1,119 @@
+﻿<html lang="">
+<head>
+    <title>My project | Pages | Gallery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="/css/_Layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+
+    <div class="bgded" style="background-image:url(/wwwroot/images/demo/backgrounds/01.png);">
+
+        <div class="wrapper row1">
+            <header id="header" class="hoc clear">
+
+                <div id="logo" class="fl_left">
+                    <h1>
+                        <a href=@*Ссылка на экшен когда появится, пример <a href="/User/Logout">@WebMazeMvc.Localize.Index.LeftMenu_Exit</a>*@
+          >My project</a>
+                    </h1>
+                </div>
+                <nav id="mainav" class="fl_right">
+                    <ul class="clear">
+                        <li class="active">
+                            <a href=@*Ссылка на экшен когда появится, пример <a href="/User/Logout">@WebMazeMvc.Localize.Index.LeftMenu_Exit</a>*@
+              >My project</a>
+                        </li>
+                        <li>
+                            <a class="drop" href="#">Pages</a>
+                            <ul>
+                                @* все ссылки заполнить когда будут готовы view models и controllers*@
+                                <li class="active"><a href="@* все ссылки заполнить когда будут готовы view models и controllers*@">Profile</a></li>
+                                <li><a href="@* все ссылки заполнить когда будут готовы view models и controllers*@">Gallery</a></li>
+                                <li><a href="@* все ссылки заполнить когда будут готовы view models и controllers*@">The essence of the site</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="drop" href="#">Dropdown</a>
+                            <ul>
+                                <li><a href="#">Level 2</a></li>
+                                <li>
+                                    <a class="drop" href="#">Level 2 + Drop</a>
+                                    <ul>
+                                        <li><a href="#">Level 3</a></li>
+                                        <li><a href="#">Level 3</a></li>
+                                        <li><a href="#">Level 3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Level 2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Link Text</a></li>
+                        <li><a href="#">Link Text</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div id="breadcrumb" class="hoc clear">
+
+            <ul>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">The essence of the site</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="wrapper row3">
+        <main class="hoc container clear">
+
+            <div class="content">
+
+                <div id="gallery">
+                    <figure>
+                        <header class="heading">Gallery Title Goes Here</header>
+                        <ul class="nospace clear">
+                            <li class="one_quarter first"><a href="#"><img src="/images/demo/gallery/01.png" alt=""></a></li>
+                            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/01.png" alt=""></a></li>
+                            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/01.png" alt=""></a></li>
+                            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/01.png" alt=""></a></li>
+                            <li class="one_quarter first"><a href="#"><img src="/images/demo/gallery/01.png" alt=""></a></li>
+                            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/01.png" alt=""></a></li>
+                            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/01.png" alt=""></a></li>
+                            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/01.png" alt=""></a></li>
+                            <li class="one_quarter first"><a href="#"><img src="/images/demo/gallery/01.png" alt=""></a></li>
+                            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/01.png" alt=""></a></li>
+                            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/01.png" alt=""></a></li>
+                            <li class="one_quarter"><a href="#"><img src="/images/demo/gallery/01.png" alt=""></a></li>
+                        </ul>
+                        <figcaption>Gallery Description Goes Here</figcaption>
+                    </figure>
+                </div>
+               
+                <nav class="pagination">
+                    <ul>
+                        <li><a href="#">&laquo; Previous</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><strong>&hellip;</strong></li>
+                        <li><a href="#">6</a></li>
+                        <li class="current"><strong>7</strong></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">9</a></li>
+                        <li><strong>&hellip;</strong></li>
+                        <li><a href="#">14</a></li>
+                        <li><a href="#">15</a></li>
+                        <li><a href="#">Next &raquo;</a></li>
+                    </ul>
+                </nav>
+               
+            </div>
+            
+            <div class="clear"></div>
+        </main>
+    </div>
+</body>
+</html>

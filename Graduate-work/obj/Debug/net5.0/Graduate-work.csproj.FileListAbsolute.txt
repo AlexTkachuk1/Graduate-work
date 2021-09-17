@@ -1,0 +1,8 @@
+C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Graduate-work.csprojAssemblyReference.cache
+C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Graduate-work.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Graduate-work.AssemblyInfoInputs.cache
+C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Graduate-work.AssemblyInfo.cs
+C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Graduate-work.csproj.CoreCompileInputs.cache
+C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Graduate-work.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Graduate-work.RazorAssemblyInfo.cache
+C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Graduate-work.RazorAssemblyInfo.cs

@@ -1,0 +1,28 @@
+﻿.alert-info {
+    font-size: 20px;
+    color: #f4f4f4;
+}
+
+.input-validation-error {
+    border: 2px red solid;
+}
+
+.field-validation-error {
+    color: firebrick;
+}
+
+.title {
+    font-size: 22px;
+    color: #f4f4f4;
+}
+
+.submit {
+    font-size: 20px;
+    color: black;
+}
+.flex {
+    display:flex;
+}
+.password-checkbox {
+    flex: 0;
+}

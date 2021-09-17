@@ -1,0 +1,68 @@
+﻿@using Graduate_work;
+
+<html lang="">
+<head>
+    <title>My project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="~/css/registration.css">
+    <link href="~/css/_Layout.css" rel="stylesheet" type="text/css">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    @RenderSection("Head", false)
+</head>
+<body id="top">
+    <div class="bgded" style="background-image: url('../images/demo/backgrounds/02.jpg');">
+
+        <div class="wrapper row1">
+            <header id="header" class="hoc clear">
+
+                <div id="logo" class="fl_left">
+                    <h1>
+                        <a href=#>My project</a>
+                    </h1>
+                </div>
+                <nav id="mainav" class="fl_right">
+                    <ul class="clear">
+                        <li class="active">
+                            <a href=#>My project</a>
+                        </li>
+                        <li>
+                            <a class="drop" href="#">Pages</a>
+                            <ul>
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="#">Gallery</a></li>
+                                <li><a href="#">The essence of the site</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="drop" href="#">Dropdown</a>
+                            <ul>
+                                <li><a href="#">Level 2</a></li>
+                                <li>
+                                    <a class="drop" href="#">Level 2 + Drop</a>
+                                    <ul>
+                                        <li><a href="#">Level 3</a></li>
+                                        <li><a href="#">Level 3</a></li>
+                                        <li><a href="#">Level 3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Level 2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Link Text</a></li>
+                        <li><a href="#">Link Text</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+    </div>
+
+    <div class="content">
+        @RenderBody()
+    </div>
+    <div class="footer">
+       
+    </div>
+</body>
+</html>
