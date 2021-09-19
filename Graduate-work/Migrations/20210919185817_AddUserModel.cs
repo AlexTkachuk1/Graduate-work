@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Graduate_work.Model;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Graduate_work.Migrations
 {
-    public partial class InitMigration : Migration
+    public partial class AddUserModel : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,8 +15,9 @@ namespace Graduate_work.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Login = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DateOfBirth = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AvatarUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Role = table.Column<int>(type: "int", nullable: false),
+                    Role = table.Column<int>(type: "int", nullable: false, defaultValue:1),
                     Lang = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

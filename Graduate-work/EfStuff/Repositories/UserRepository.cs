@@ -13,5 +13,11 @@ namespace Graduate_work.EfStuff.Repositories
             : base(dbContext)
         {
         }
+
+        public User Get(string login, string password)
+        {
+            return _dbSet
+                .SingleOrDefault(x => x.Login == login && x.Password == password);
+        }
     }
 }

@@ -1,0 +1,38 @@
+﻿@model LoginViewModel
+
+@section Head{
+    <script src="~/js/registration.js"></script>
+}
+
+<div class="title">
+    Вход в учетную запись:
+</div>
+<form action="/User/Login" method="post">
+    <div class="alert-info">
+        Введите свой логин:
+    </div>
+
+    <div>
+        @Html.TextBoxFor(x => x.Login)
+        @Html.ValidationMessageFor(x => x.Login)
+    </div>
+
+    <div class="alert-info">
+        Введите свой пароль:
+    </div>
+
+    <div class="password">
+        <input type="password" id="password-input" placeholder="Введите пароль" name="@nameof(RegistrationViewModel.Password)">
+        <div class="flex">
+            <label><input type="checkbox" class="password-checkbox"></label>
+            <div>
+                Показать пароль
+            </div>
+        </div>
+        @Html.ValidationMessageFor(x => x.Password)
+    </div>
+
+    <div class="submit">
+        <input type="submit" value="войти" />
+    </div>
+</form>

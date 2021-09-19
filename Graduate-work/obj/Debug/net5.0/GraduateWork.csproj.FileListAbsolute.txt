@@ -78,3 +78,4 @@ C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\
 C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\GraduateWork.csproj.CopyComplete
 C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\GraduateWork.genruntimeconfig.cache
 C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Razor\Views\User\Index.cshtml.g.cs
+C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Razor\Views\User\Login.cshtml.g.cs

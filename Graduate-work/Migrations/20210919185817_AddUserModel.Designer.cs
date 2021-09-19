@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Graduate_work.Migrations
 {
     [DbContext(typeof(ProjectDbContext))]
-    [Migration("20210913234837_SringDateOfBerthForUser")]
-    partial class SringDateOfBerthForUser
+    [Migration("20210919185817_AddUserModel")]
+    partial class AddUserModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

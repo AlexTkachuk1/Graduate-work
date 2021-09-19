@@ -19,19 +19,19 @@
 
                 <div id="logo" class="fl_left">
                     <h1>
-                        <a href=#>My project</a>
+                        <a href=/User/Index>My project</a>
                     </h1>
                 </div>
                 <nav id="mainav" class="fl_right">
                     <ul class="clear">
                         <li class="active">
-                            <a href=#>My project</a>
+                            <a href=/User/Index>My project</a>
                         </li>
                         <li>
                             <a class="drop" href="#">Pages</a>
                             <ul>
-                                <li><a href="#">Profile</a></li>
-                                <li><a href="#">Gallery</a></li>
+                                <li><a href="/User/Profile">Profile</a></li>
+                                <li><a href="/Home/Gallery">Gallery</a></li>
                                 <li><a href="#">The essence of the site</a></li>
                             </ul>
                         </li>
@@ -51,7 +51,12 @@
                             </ul>
                         </li>
                         <li><a href="#">Link Text</a></li>
-                        <li><a href="#">Link Text</a></li>
+                        @if(User.Identity.IsAuthenticated){
+                        <li><a href="/User/Logout">Выйти из учетную запись</a></li>
+                        }
+                        else{<li><a href="/User/Login">Войти в учетную запись</a></li>
+                        }
+
                     </ul>
                 </nav>
             </header>

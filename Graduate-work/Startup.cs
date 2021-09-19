@@ -22,6 +22,8 @@ namespace Graduate_work
             Configuration = configuration;
         }
 
+        public const string AuthName = "Coockie-GradueteProject";
+
         public Microsoft.Extensions.Configuration.IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -30,9 +32,19 @@ namespace Graduate_work
             var connectString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Project;Integrated Security=True;";
             services.AddDbContext<ProjectDbContext>(x => x.UseSqlServer(connectString));
 
+            services.AddAuthentication(AuthName)
+            .AddCookie(AuthName, config =>
+            {
+                config.LoginPath = "/User/Login";
+                config.AccessDeniedPath = "/User/Denied";
+                config.Cookie.Name = "GradueteProject";
+            });
+
             repositoriesRegistration(services);
 
             registerMapper(services);
+
+            services.ServiceHelper<UserService>();
 
             services.AddControllersWithViews();
 
