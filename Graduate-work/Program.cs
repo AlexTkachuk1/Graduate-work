@@ -1,3 +1,4 @@
+using Graduate_work.EfStuff;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -13,7 +14,7 @@ namespace Graduate_work
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            CreateHostBuilder(args).Build().Seed().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -22,5 +23,6 @@ namespace Graduate_work
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
     }
 }

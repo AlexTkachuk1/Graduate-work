@@ -1,0 +1,32 @@
+﻿@model ChangeRoleViewModel
+
+<div class="title">
+    Смена роли пользователя:
+</div>
+<form action="/User/ChangeRole" method="post">
+    <div class="alert-info">
+        Введите Id пользователя, роль которого будет изменена:
+    </div>
+
+    <div>
+        @Html.TextBoxFor(x => x.Id)
+        @Html.ValidationMessageFor(x => x.Id)
+    </div>
+
+    <div class="alert-info">
+        Выберите новую роль:
+    </div>
+
+    <p>
+        <select size="2" multiple name="@nameof(ChangeRoleViewModel.Role)">
+            <option disabled>Роли</option>
+            <option value="User">User</option>
+            <option value="Moderator">Moderator</option>
+        </select>
+        @Html.ValidationMessageFor(x => x.Role)
+    </p>
+
+    <div class="submit">
+        <input type="submit" value="отправить" />
+    </div>
+</form>

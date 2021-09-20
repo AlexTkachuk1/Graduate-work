@@ -13,5 +13,7 @@ namespace Graduate_work.Models
         [StringLength(maximumLength: 10, ErrorMessage = "Указанный пароль длиннее 10 символов, сделайте его короче")]
         [Required(ErrorMessage = "Не указан пароль пользователя")]
         public string Password { get; set; }
+
+        public string ReturnUrl { get; set; }
     }
 }

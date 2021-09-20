@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Graduate_work.Controllers.AuthAttribute;
 using Graduate_work.EfStuff.Repositories;
 using Graduate_work.Model;
 using Graduate_work.Models;
@@ -6,7 +7,9 @@ using Graduate_work.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -55,7 +58,12 @@ namespace Graduate_work.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            return View();
+            var returnUrl = Request.Query["ReturnUrl"].FirstOrDefault();
+            var viewModel = new LoginViewModel()
+            {
+                ReturnUrl = returnUrl
+            };
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -79,7 +87,12 @@ namespace Graduate_work.Controllers
             var claimsIdentity = new ClaimsIdentity(claims, Startup.AuthName);
             var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
             await HttpContext.SignInAsync(claimsPrincipal);
-            return View("Index");
+            if (string.IsNullOrEmpty(loginViewModel.ReturnUrl))
+            {
+                return RedirectToAction("Index");
+            }
+
+            return RedirectToAction(loginViewModel.ReturnUrl);
         }
 
         public async Task<IActionResult> Logout()
@@ -92,15 +105,36 @@ namespace Graduate_work.Controllers
         [HttpGet]
         public IActionResult Denied()
         {
-            return View();
+            ViewBag.UserName = _userServis.GetCurrent().Login;
+            return View(ViewBag);
         }
 
         [HttpGet]
         [Authorize]
         public IActionResult Profile()
         {
+            return View();
+        }
+
+        [HttpGet]
+        [Authorize]
+        [OnliAdmin]
+        public IActionResult ChangeRole()
+        {
             var User = _userServis.GetCurrent();
             return View();
+        }
+
+        [HttpPost]
+        [Authorize]
+        [OnliAdmin]
+        public IActionResult ChangeRole(ChangeRoleViewModel changeRoleViewModel)
+        {
+            var rolValue = (int)Enum.Parse(typeof(Role), changeRoleViewModel.Role);
+            var user = _userRepository.Get(changeRoleViewModel.Id);
+            user.Role = (Role)rolValue;
+            _userRepository.Save(user);
+            return View("Index");
         }
     }
 }

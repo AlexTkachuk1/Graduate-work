@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Graduate_work.Services
@@ -26,7 +27,7 @@ namespace Graduate_work.Services
                 .HttpContext
                 .User
                 .Claims
-                .SingleOrDefault(x => x.Type == "Id")
+                .SingleOrDefault(x => x.Type == ClaimTypes.NameIdentifier)
                 ?.Value;
 
             if (string.IsNullOrEmpty(idStr))
@@ -37,5 +38,7 @@ namespace Graduate_work.Services
             var id = int.Parse(idStr);
             return _userRepository.Get(id);
         }
+
+        public bool IsAdmin() => GetCurrent()?.Role == Role.Admin;
     }
 }

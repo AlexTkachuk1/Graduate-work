@@ -1,9 +1,5 @@
 ﻿using Graduate_work.Model;
-using Graduate_work.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Graduate_work.EfStuff.Repositories
 {
@@ -18,6 +14,11 @@ namespace Graduate_work.EfStuff.Repositories
         {
             return _dbSet
                 .SingleOrDefault(x => x.Login == login && x.Password == password);
+        }
+
+        public bool Exist(Role role)
+        {
+            return _dbSet.Any(x => x.Role == role);
         }
     }
 }
