@@ -1,8 +1,5 @@
 ﻿using Graduate_work.EfStuff.Model;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Graduate_work.Model
 {
@@ -14,7 +11,7 @@ namespace Graduate_work.Model
 
         public string DateOfBirth { get; set; }
 
-        public string AvatarUrl { get; set; }
+        public string AvatarUrl { get; set; } = "/images/user avatar/avatar.gif";
 
         public Role Role { get; set; }
 
