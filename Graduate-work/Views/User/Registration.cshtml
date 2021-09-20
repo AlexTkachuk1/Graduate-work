@@ -5,11 +5,11 @@
  }
 
 <div class="title">
-    Регистрация:
+    @Graduate_work.Localize.language.Registration:
 </div>
 <form action="/User/Registration" method="post">
     <div class="alert-info">
-        Введите свой никнейм:
+        @Graduate_work.Localize.language.Registratio_nickname_
     </div>
 
     <div>
@@ -18,37 +18,37 @@
     </div>
 
     <div class="alert-info">
-        Введите свой пароль:
+        @Graduate_work.Localize.language.Registratio_password
     </div>
 
     <div class="password">
-        <input type="password" id="password-input" placeholder="Введите пароль" name="@nameof(RegistrationViewModel.Password)">
+        <input type="password" id="password-input" placeholder="@Graduate_work.Localize.language.Registratio_password" name="@nameof(RegistrationViewModel.Password)">
         <div class="flex">
             <label><input type="checkbox" class="password-checkbox"></label>
             <div>
-                Показать пароль
+                @Graduate_work.Localize.language.Show_Password
             </div>
         </div>
         @Html.ValidationMessageFor(x => x.Password)
     </div>
 
     <div class="alert-info">
-        Введите свой пароль повторно:
+        @Graduate_work.Localize.language.Registratio_password_again
     </div>
 
     <div class="password">
-        <input type="password" id="password-input2" placeholder="Введите пароль" name="@nameof(RegistrationViewModel.PasswordCopy)">
+        <input type="password" id="password-input2" placeholder="@Graduate_work.Localize.language.Registratio_password" name="@nameof(RegistrationViewModel.PasswordCopy)">
         <div class="flex">
             <label><input type="checkbox" class="password-checkbox1"></label>
             <div>
-                Показать пароль
+                @Graduate_work.Localize.language.Show_Password
             </div>
         </div>
         @Html.ValidationMessageFor(x => x.PasswordCopy)
     </div>
 
     <div class="alert-info">
-        Выберите дату своего рождения:
+        @Graduate_work.Localize.language.Registratio_date_of_birth_
     </div>
     <div>
         <input type="date" name="@nameof(RegistrationViewModel.DateOfBirth)" min="1910-01-01">
@@ -56,6 +56,6 @@
     </div>
 
     <div class="submit">
-        <input type="submit" value="зарегистрироваться" />
+        <input type="submit" value="@Graduate_work.Localize.language.send" />
     </div>
 </form>

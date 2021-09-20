@@ -1,11 +1,11 @@
 ﻿@model ChangeRoleViewModel
 
 <div class="title">
-    Смена роли пользователя:
+    @Graduate_work.Localize.language.ChangeUserRole:
 </div>
 <form action="/User/ChangeRole" method="post">
     <div class="alert-info">
-        Введите Id пользователя, роль которого будет изменена:
+        @Graduate_work.Localize.language.UserController_ChangeRole_ChandeID
     </div>
 
     <div>
@@ -14,19 +14,19 @@
     </div>
 
     <div class="alert-info">
-        Выберите новую роль:
+        @Graduate_work.Localize.language.UserController_ChangeRole_SelectRole
     </div>
 
     <p>
         <select size="2" multiple name="@nameof(ChangeRoleViewModel.Role)">
-            <option disabled>Роли</option>
-            <option value="User">User</option>
-            <option value="Moderator">Moderator</option>
+            <option disabled>@Graduate_work.Localize.language.UserController_ChangeRole_Roles</option>
+            <option value="User">@Graduate_work.Localize.language.User</option>
+            <option value="Moderator">@Graduate_work.Localize.language.Moderator</option>
         </select>
         @Html.ValidationMessageFor(x => x.Role)
     </p>
 
     <div class="submit">
-        <input type="submit" value="отправить" />
+        <input type="submit" value="@Graduate_work.Localize.language.send" />
     </div>
 </form>
