@@ -86,3 +86,4 @@ C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\
 C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\bin\Debug\net5.0\Ru\GraduateWork.resources.dll
 C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Graduate_work.Localize.language.Ru.resources
 C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Ru\GraduateWork.resources.dll
+C:\Users\Кирито\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Razor\Views\Picture\Add.cshtml.g.cs

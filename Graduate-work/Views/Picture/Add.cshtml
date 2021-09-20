@@ -1,0 +1,13 @@
+﻿@model AddPictureViewModel
+
+<form action="/Picture/Add" method="post" id="someForm" enctype="multipart/form-data">
+    <div>
+        @Graduate_work.Localize.language.Name <input name="name" />
+    </div>
+    <div>
+        @Graduate_work.Localize.language.Image <input type="file" name="File" />
+    </div>
+    <div>
+        <input type="submit" value=@Graduate_work.Localize.language.send />
+    </div>
+</form>

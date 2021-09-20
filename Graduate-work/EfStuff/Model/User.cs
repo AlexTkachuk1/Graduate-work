@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Graduate_work.EfStuff.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,5 +19,9 @@ namespace Graduate_work.Model
         public Role Role { get; set; }
 
         public Language Lang { get; set; }
+
+        public virtual List<Comment> CommentsCreatedByMe { get; set; }
+
+        public virtual List<Picture> PicturesCreatedByMe { get; set; }
     }
 }

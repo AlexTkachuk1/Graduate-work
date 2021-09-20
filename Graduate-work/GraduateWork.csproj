@@ -21,6 +21,7 @@
   <ItemGroup>
     <Folder Include="Migrations\" />
     <Folder Include="Models\CastomValidationAttribute\" />
+    <Folder Include="wwwroot\images\pictures\" />
     <Folder Include="wwwroot\images\passvord\" />
     <Folder Include="wwwroot\images\user avatar\" />
   </ItemGroup>

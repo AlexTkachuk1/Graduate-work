@@ -132,6 +132,9 @@
   <data name="Gallery_UserPictures" xml:space="preserve">
     <value>Изображения пользователя</value>
   </data>
+  <data name="Image" xml:space="preserve">
+    <value>Изображение</value>
+  </data>
   <data name="Index_description" xml:space="preserve">
     <value>Здесь можно зарегистрироваться, добавить и просмотреть свои картинки в галерее , отредактировать свой профиль и добавить комментарии, в дальнейшем я добавлю новый функциональнал для вас.</value>
   </data>

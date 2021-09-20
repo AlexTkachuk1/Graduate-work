@@ -187,6 +187,15 @@ namespace Graduate_work.Localize {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image.
+        /// </summary>
+        public static string Image {
+            get {
+                return ResourceManager.GetString("Image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Here you can register, add and view your pictures in the gallery and edit your profile, add comments, in the future I will add a new functionality for you..
         /// </summary>
         public static string Index_description {

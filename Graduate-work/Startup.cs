@@ -12,6 +12,7 @@ using System.Linq;
 using Graduate_work.Services;
 using Graduate_work.Model;
 using Graduate_work.Models;
+using Graduate_work.EfStuff.Model;
 
 namespace Graduate_work
 {
@@ -46,6 +47,8 @@ namespace Graduate_work
 
             services.ServiceHelper<UserService>();
 
+            services.ServiceHelper<FileService>();
+
             services.AddControllersWithViews();
 
             services.AddHttpContextAccessor();
@@ -71,6 +74,10 @@ namespace Graduate_work
             provider.CreateMap<User, RegistrationViewModel>();
 
             provider.CreateMap<RegistrationViewModel, User>();
+
+            provider.CreateMap<Picture, AddPictureViewModel>();
+
+            provider.CreateMap<AddPictureViewModel, Picture>();
 
             var mapperConfiguration = new MapperConfiguration(provider);
             var mapper = new Mapper(mapperConfiguration);

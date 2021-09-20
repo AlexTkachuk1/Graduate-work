@@ -159,6 +159,9 @@
   <data name="Gallery_UserPictures" xml:space="preserve">
     <value>User pictures</value>
   </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
   <data name="Index_description" xml:space="preserve">
     <value>Here you can register, add and view your pictures in the gallery and edit your profile, add comments, in the future I will add a new functionality for you.</value>
   </data>
