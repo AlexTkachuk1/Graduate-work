@@ -99,6 +99,8 @@ namespace Graduate_work
 
             app.UseAuthorization();
 
+            app.UseMiddleware<LocalizeMidlleware>();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

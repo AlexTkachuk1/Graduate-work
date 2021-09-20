@@ -213,6 +213,9 @@
   <data name="Registratio_password again" xml:space="preserve">
     <value>Ввелите пароль повторно</value>
   </data>
+  <data name="Reset" xml:space="preserve">
+    <value>сброс</value>
+  </data>
   <data name="send" xml:space="preserve">
     <value>отправить</value>
   </data>
@@ -251,5 +254,8 @@
   </data>
   <data name="Website map" xml:space="preserve">
     <value>Карта вебсайта</value>
+  </data>
+  <data name="Write A Comment" xml:space="preserve">
+    <value>Оставьте комментарий</value>
   </data>
 </root>

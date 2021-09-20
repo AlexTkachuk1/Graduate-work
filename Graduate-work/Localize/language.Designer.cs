@@ -430,6 +430,15 @@ namespace Graduate_work.Localize {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reset.
+        /// </summary>
+        public static string Reset {
+            get {
+                return ResourceManager.GetString("Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to send.
         /// </summary>
         public static string send {
@@ -543,6 +552,15 @@ namespace Graduate_work.Localize {
         public static string Website_map {
             get {
                 return ResourceManager.GetString("Website map", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Write A Comment.
+        /// </summary>
+        public static string Write_A_Comment {
+            get {
+                return ResourceManager.GetString("Write A Comment", resourceCulture);
             }
         }
     }

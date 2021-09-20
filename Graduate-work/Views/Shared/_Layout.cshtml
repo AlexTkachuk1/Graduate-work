@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/css/registration.css">
     <link href="~/css/_Layout.css" rel="stylesheet" type="text/css">
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-
+    <script src="/js/localize.js"></script>
     @RenderSection("Head", false)
 </head>
 <body id="top">
@@ -55,7 +55,7 @@
                         {
                             <li><a href="/User/ChangeRole">@Graduate_work.Localize.language.UserController_ChangeRole</a></li>
                         }
-                        <li><a href="#">Link Text</a></li>
+                        <li><a href="#">@Graduate_work.Localize.language.Link_Text</a></li>
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li><a href="/User/Logout">@Graduate_work.Localize.language.UserController_Logout</a></li>
@@ -75,7 +75,10 @@
         @RenderBody()
     </div>
     <div class="footer">
-
+        <select class="language">
+            <option value=en-EN>Eng</option>
+            <option value=ru-RU>Рус</option>
+        </select>
     </div>
 </body>
 </html>
