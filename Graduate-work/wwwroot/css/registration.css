@@ -26,3 +26,10 @@
 .password-checkbox {
     flex: 0;
 }
+.icon{
+    max-width: 20px;
+    max-height:20px;
+}
+.login-name {
+    display: flex;
+}

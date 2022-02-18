@@ -62,6 +62,26 @@ namespace Graduate_work.Migrations
                     b.ToTable("Pictures");
                 });
 
+            modelBuilder.Entity("Graduate_work.Model.Book", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("ReaderId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ReaderId");
+
+                    b.ToTable("Books");
+                });
+
             modelBuilder.Entity("Graduate_work.Model.User", b =>
                 {
                     b.Property<long>("Id")
@@ -75,6 +95,9 @@ namespace Graduate_work.Migrations
                     b.Property<string>("DateOfBirth")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Lang")
                         .HasColumnType("int");
 
@@ -86,6 +109,15 @@ namespace Graduate_work.Migrations
 
                     b.Property<int>("Role")
                         .HasColumnType("int");
+
+                    b.Property<int>("Tel")
+                        .HasColumnType("int");
+
+                    b.Property<string>("homeСity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("homeСountry")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -110,9 +142,20 @@ namespace Graduate_work.Migrations
                     b.Navigation("Creater");
                 });
 
+            modelBuilder.Entity("Graduate_work.Model.Book", b =>
+                {
+                    b.HasOne("Graduate_work.Model.User", "Reader")
+                        .WithMany("MyFavoriteBooks")
+                        .HasForeignKey("ReaderId");
+
+                    b.Navigation("Reader");
+                });
+
             modelBuilder.Entity("Graduate_work.Model.User", b =>
                 {
                     b.Navigation("CommentsCreatedByMe");
+
+                    b.Navigation("MyFavoriteBooks");
 
                     b.Navigation("PicturesCreatedByMe");
                 });

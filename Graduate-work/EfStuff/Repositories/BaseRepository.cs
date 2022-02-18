@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Graduate_work.Model;
-using Graduate_work.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Graduate_work.EfStuff.Repositories
@@ -28,6 +25,16 @@ namespace Graduate_work.EfStuff.Repositories
         public List<Model> GetAll()
         {
             return _dbSet.ToList();
+        }
+
+        public List<Model> TakeAndSkip(int take , int skip = 0)
+        {
+            return _dbSet.Skip(skip).Take(take).ToList();
+        }
+
+        public List<Model> TakeAndSkipUsersObj(int take, int skip = 0)
+        {
+            return _dbSet.Skip(skip).Take(take).OrderBy(x =>x.Id).ToList();
         }
 
         public void Save(Model model)

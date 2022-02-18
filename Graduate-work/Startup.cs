@@ -30,6 +30,9 @@ namespace Graduate_work
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+            services.AddRazorPages()
+                .AddRazorRuntimeCompilation();
             var connectString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Project;Integrated Security=True;";
             services.AddDbContext<ProjectDbContext>(x => x.UseSqlServer(connectString));
 
@@ -78,6 +81,14 @@ namespace Graduate_work
             provider.CreateMap<Picture, AddPictureViewModel>();
 
             provider.CreateMap<AddPictureViewModel, Picture>();
+
+            provider.CreateMap<PictureViewModel, Picture>();
+
+            provider.CreateMap<Picture, PictureViewModel>();
+
+            provider.CreateMap<ProfileViewModel, User>();
+
+            provider.CreateMap<User, ProfileViewModel>();
 
             var mapperConfiguration = new MapperConfiguration(provider);
             var mapper = new Mapper(mapperConfiguration);

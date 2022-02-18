@@ -89,10 +89,10 @@ namespace Graduate_work.Controllers
             await HttpContext.SignInAsync(claimsPrincipal);
             if (string.IsNullOrEmpty(loginViewModel.ReturnUrl))
             {
-                return RedirectToAction("Index");
+                return Redirect("Index");
             }
 
-            return RedirectToAction(loginViewModel.ReturnUrl);
+            return Redirect(loginViewModel.ReturnUrl);
         }
 
         public async Task<IActionResult> Logout()
@@ -113,7 +113,26 @@ namespace Graduate_work.Controllers
         [Authorize]
         public IActionResult Profile()
         {
-            return View();
+            var user = _userServis.GetCurrent();
+            var profileViewModel = _mapper.Map<ProfileViewModel>(user);
+            return View(profileViewModel);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult AddProfileData(ProfileViewModel profileViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Registration", profileViewModel);
+            }
+            var user = _userServis.GetCurrent();
+
+            user = _mapper.Map<User>(profileViewModel);
+
+            _userRepository.Save(user);
+
+            return View("Index");
         }
 
         [HttpGet]
@@ -121,7 +140,6 @@ namespace Graduate_work.Controllers
         [OnliAdmin]
         public IActionResult ChangeRole()
         {
-            var User = _userServis.GetCurrent();
             return View();
         }
 
@@ -135,6 +153,22 @@ namespace Graduate_work.Controllers
             user.Role = (Role)rolValue;
             _userRepository.Save(user);
             return View("Index");
+        }
+
+        public IActionResult IsUniq(string name)
+        {
+            var isUniq =!_userRepository.Exist(name);
+            return Json(isUniq);
+        }
+
+        [HttpGet]
+        [Authorize]
+        [OnliAdmin]
+        public IActionResult GetFavoriteBooks(ChangeRoleViewModel changeRoleViewModel)
+        {
+            var currentUserFavoriteBooks = _userServis.GetCurrent().MyFavoriteBooks;
+
+            return View("Index", currentUserFavoriteBooks);
         }
     }
 }

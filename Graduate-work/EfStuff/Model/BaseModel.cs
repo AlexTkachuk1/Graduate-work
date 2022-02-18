@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Graduate_work.Model
 {
-    public class BaseModel
+    public abstract class BaseModel
     {
         public long Id { get; set; }
     }

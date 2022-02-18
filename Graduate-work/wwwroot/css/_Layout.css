@@ -455,7 +455,7 @@ nav ul, nav ol {
     line-height: normal;
 }
 
-    #mainav .drop::after, #mainav li li .drop::after, #breadcrumb li a::after, .sidebar nav a::after {
+    #mainav .drop::after, #mainav li li .drop::after {
         position: absolute;
         font-size: 10px;
         line-height: 10px;
@@ -520,10 +520,6 @@ nav ul, nav ol {
         margin: 0;
         padding: 10px 15px;
     }
-
-        #mainav .drop::after, #mainav li li .drop::after {
-            content: "\f0d7";
-        }
 
     #mainav .drop::after {
         top: 35px;
@@ -595,21 +591,12 @@ nav ul, nav ol {
             font-size: 12px;
         }
 
-            #breadcrumb li a::after {
-                top: 3px;
-                right: 0;
-                content: "\f101";
-            }
-
         #breadcrumb li:last-child a {
             margin: 0;
             padding: 0;
         }
 
-            #breadcrumb li:last-child a::after {
-                display: none;
-            }
-
+           
 /* Sidebar Navigation */
 .sidebar nav {
     display: block;
@@ -631,28 +618,19 @@ nav ul, nav ol {
         border-width: 0 0 1px 0;
     }
 
-        .sidebar nav a::after {
-            top: 9px;
-            left: 5px;
-            content: "\f101";
-        }
+  
 
     .sidebar nav ul ul a {
         padding-left: 35px;
     }
 
-        .sidebar nav ul ul a::after {
-            left: 25px;
-        }
+
 
     .sidebar nav ul ul ul a {
         padding-left: 55px;
     }
 
-        .sidebar nav ul ul ul a::after {
-            left: 45px;
-        }
-
+ 
 /* Pagination */
 .pagination {
     display: block;

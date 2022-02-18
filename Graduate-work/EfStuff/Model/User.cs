@@ -11,11 +11,21 @@ namespace Graduate_work.Model
 
         public string DateOfBirth { get; set; }
 
+        public string homeСountry { get; set; }
+
+        public string homeСity { get; set; }
+
+        public int Tel { get; set; }
+
+        public string Email { get; set; }
+
         public string AvatarUrl { get; set; } = "/images/user avatar/avatar.gif";
 
         public Role Role { get; set; }
 
         public Language Lang { get; set; }
+
+        public virtual List<Book> MyFavoriteBooks { get; set; }
 
         public virtual List<Comment> CommentsCreatedByMe { get; set; }
 

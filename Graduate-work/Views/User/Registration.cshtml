@@ -1,8 +1,9 @@
 ﻿@model RegistrationViewModel
 
 @section Head{
-    <script src ="~/js/registration.js"></script>
- }
+    <script src="~/js/registration.js"></script>
+    <script src="~/js/AddUser.js"></script>
+}
 
 <div class="title">
     @Graduate_work.Localize.language.Registration:
@@ -12,8 +13,10 @@
         @Graduate_work.Localize.language.Registratio_nickname_
     </div>
 
-    <div>
+    <div class="login-name">
         @Html.TextBoxFor(x => x.Login)
+        <img class="icon ok" src="/images/icon/Ok.png">
+        <img class="icon no" src="/images/icon/No.png">
         @Html.ValidationMessageFor(x => x.Login)
     </div>
 

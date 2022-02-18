@@ -20,5 +20,14 @@ namespace Graduate_work.EfStuff.Repositories
         {
             return _dbSet.Any(x => x.Role == role);
         }
+
+        public bool Exist(string login)
+        {
+            if (login == string.Empty || login == null)
+            {
+                return true;
+            }
+            return _dbSet.Any(x => x.Login == login);
+        }
     }
 }

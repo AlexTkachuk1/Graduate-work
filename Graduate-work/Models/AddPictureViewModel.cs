@@ -1,9 +1,5 @@
 ﻿using Graduate_work.Model;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Graduate_work.Models
 {
@@ -16,5 +12,14 @@ namespace Graduate_work.Models
         public virtual User Creater { get; set; }
 
         public IFormFile File { get; set; }
+
+        public AddPictureViewModel()
+        {
+        }
+
+        public AddPictureViewModel(string url)
+        {
+            Url = url;
+        }
     }
 }

@@ -12,6 +12,8 @@ namespace Graduate_work.EfStuff
 
         public DbSet<Picture> Pictures { get; set; }
 
+        public DbSet<Book> Books { get; set; }
+
         public ProjectDbContext(DbContextOptions options) : base(options)
         {
         }
@@ -25,6 +27,10 @@ namespace Graduate_work.EfStuff
             modelBuilder.Entity<User>()
                 .HasMany(x => x.PicturesCreatedByMe)
                 .WithOne(x => x.Creater);
+
+            modelBuilder.Entity<User>()
+                .HasMany(x => x.MyFavoriteBooks)
+                .WithOne(x => x.Reader);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

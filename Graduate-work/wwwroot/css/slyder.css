@@ -1,0 +1,8 @@
+﻿.visible-image{
+    max-height:800px;
+    max-width:800px;
+}
+
+.my-slider{
+    display: flex;
+}

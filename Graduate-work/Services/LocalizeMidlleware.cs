@@ -33,8 +33,6 @@ namespace Graduate_work.Services
                 var cultureName = context.Request.Cookies["lang"];
                 CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo(cultureName);
             }
-
-
             await _next(context);
         }
     }
