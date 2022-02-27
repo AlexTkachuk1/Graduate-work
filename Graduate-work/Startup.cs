@@ -33,6 +33,7 @@ namespace Graduate_work
             services.AddControllersWithViews();
             services.AddRazorPages()
                 .AddRazorRuntimeCompilation();
+
             var connectString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Project;Integrated Security=True;";
             services.AddDbContext<ProjectDbContext>(x => x.UseSqlServer(connectString));
 

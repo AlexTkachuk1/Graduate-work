@@ -5,16 +5,13 @@ namespace Graduate_work.Models
 {
     public class PictureViewModel
     {
-
         public string Url { get; set; }
 
-        public PictureViewModel()
-        {
-        }
-
-        public PictureViewModel(string url)
+        public string Name { get; set; }
+        public PictureViewModel(string url, string name)
         {
             Url = url;
+            Name = name;
         }
     }
 }

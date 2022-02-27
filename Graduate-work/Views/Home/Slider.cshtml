@@ -1,4 +1,4 @@
-﻿@model List<PictureViewModel>
+﻿@model PictureViewModel
 <html lang="">
 <head>
     <title>@Graduate_work.Localize.language.Layout_title | @Graduate_work.Localize.language.Layout_dropdown | @Graduate_work.Localize.language.Layout_gallery</title>
@@ -11,6 +11,19 @@
 </head>
 <body id="top">
     <div class="slider-my-good"> 
+        <div class="my-slider">
+            <div class="paginator-button">
+                <button class='previous'>Previous</>
+            </div>
+            <div class="image-block" id="@Model.Name">
+                <h2>@Model.Name</h2>
+                <span class='counter'><span class='current'></span>/<span class='maxCount'></span></span>
+                <img class ='visible-image' src=@Model.Url />
+            </div>
+            <div class="paginator-button">
+                <button class='next'>Next</>
+            </div>
+        </div>
     </div>
 </body>
 </html>

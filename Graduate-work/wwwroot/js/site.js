@@ -8,7 +8,8 @@
     //});
     var Fetch = (async function () {
         var value = null;
-        const requestURL = 'https://localhost:5001/Home/sliderData';
+        var name = $(".image-block").prop('id');
+        const requestURL = "https://localhost:5001/Home/SliderData?Name=" + name;
 
         var response = await fetch(requestURL);
 

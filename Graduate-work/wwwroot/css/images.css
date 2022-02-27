@@ -1,0 +1,15 @@
+﻿.gallery {
+    display: flex;
+}
+
+.standardImage {
+    width: 210px;
+    height: 210px;
+    display: inline-block;
+    background-size: cover;
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: 210px 210px;
+    background-image: url('/images/demo/gallery/01.png');
+}

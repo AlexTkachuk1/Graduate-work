@@ -25,22 +25,17 @@ namespace Graduate_work.Controllers
             _userServis = userServis;
         }
 
-        public IActionResult Gallery(int pageNumber = 1)
+        public IActionResult Gallery(int pageNumber = 1, int numberOfPictures = 12)
         {
-            var _defoultUrl = "/images/demo/gallery/01.png";
-            var _numberOfPictures = 12;
-
-            if (pageNumber > 3)
+            var _numberOfPictures = numberOfPictures;
+            var displayedLinks = pageNumber;
+            if (displayedLinks - 2 > 0)
             {
-                pageNumber -= 3;
+                displayedLinks -= 1;
             }
-            else if (pageNumber == 3)
+            else
             {
-                pageNumber -= 2;
-            }
-            else if (pageNumber == 0)
-            {
-                pageNumber = 1;
+                displayedLinks = 1;
             }
 
             var _user = _userServis.GetCurrent();
@@ -48,33 +43,37 @@ namespace Graduate_work.Controllers
 
             viewModels.AddRange(_mapper.Map<List<PictureViewModel>>(
                 _pictureRepository.TakeAndSkipPicture(_user.Id, _numberOfPictures, _numberOfPictures * (pageNumber - 1))));
-            var defoultPictureList = Enumerable.Range(1, _numberOfPictures - viewModels.Count).Select(x => new PictureViewModel(_defoultUrl));
-            viewModels.AddRange(defoultPictureList);
-
-
 
             var NumberOfPagesPicture = new NumberOfPagesPicture()
             {
-                Number = pageNumber,
+                NumberOfImg = numberOfPictures,
+                NumberOfPage = displayedLinks,
                 Pictures = viewModels
             };
             return View(NumberOfPagesPicture);
         }
-
-        public IActionResult sliderData(int pageNumber = 1)
+        public IActionResult SliderData([FromQuery(Name = "Name")] string name)
         {
-            var _defoultPictureCollection = 50;
-            var _user = _userServis.GetCurrent();
+            var _userId = _userServis.GetCurrent().Id;
             var viewModels = new List<PictureViewModel>();
-            viewModels.AddRange(_mapper.Map<List<PictureViewModel>>(
-                _pictureRepository.TakeAndSkipPicture(_user.Id, _defoultPictureCollection, _defoultPictureCollection * (pageNumber - 1))));
-            
+            var allImgs = _mapper.Map<List<PictureViewModel>>(
+                _pictureRepository.GetAllUsersPictures(_userId));
+
+            var selectImg = _mapper.Map<PictureViewModel>(
+            _pictureRepository.GetByName(_userId, name));
+            allImgs.Remove(selectImg);
+            viewModels.Add(selectImg);
+            viewModels.AddRange(allImgs);
             return new JsonResult(viewModels);
         }
-        
-        public IActionResult Slider()
+        public IActionResult Slider([FromQuery(Name = "Name")] string name)
         {
-            return View();
+            var _userId = _userServis.GetCurrent().Id;
+
+            var selectImg = _mapper.Map<PictureViewModel>(
+            _pictureRepository.GetByName(_userId, name));
+ 
+            return View(selectImg);
         }
     }
 }

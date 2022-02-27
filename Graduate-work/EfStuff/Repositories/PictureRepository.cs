@@ -14,5 +14,13 @@ namespace Graduate_work.EfStuff.Repositories
         {
             return _dbSet.Where(x => x.Creater.Id == userId).Skip(skip).Take(take).ToList();
         }
+        public Picture GetByName(long userId, string name)
+        {
+            return _dbSet.Where(x => x.Creater.Id == userId).Single(x =>x.Name == name);
+        }
+        public List<Picture> GetAllUsersPictures(long userId)
+        {
+            return _dbSet.Where(x => x.Creater.Id == userId).ToList();
+        }
     }
 }

@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="~/css/pagination.css" rel="stylesheet" type="text/css">
+    <link href="~/css/images.css" rel="stylesheet" type="text/css">
 </head>
 <body id="top">
 
@@ -34,29 +35,33 @@
                             <div class="addPhoto"><a href="/Picture/Add">Add photo</a></div>
                         </div>
                         <ul class="nospace clear">
-                            @foreach (var picture in Model.Pictures)
+                            @foreach (PictureViewModel picture in Model.Pictures)
                             {
-                                <li class="one_quarter"><a href="/Home/Slider"><img class="img" src=@picture.Url></a></li>
+                                var name = picture.Name;
+                                <li class="one_quarter"><a href="/Home/Slider?Name=@name"><img class="img" src=@picture.Url></a></li>
                             }
-
+                            @for(int i = 0; i < (Model.NumberOfImg-Model.Pictures.Count()); i++)
+                            {
+                                <li class="one_quarter"><a href="/Home/Slider"><span class ='standardImage' /></a></li>
+                            }
                         </ul>
                     </figure>
                 </div>
 
                 <form action="/Home/Gallery" method="post">
                     <div class="pagination">
-                        <button type="submit" name="pageNumber" class="paginator-button" value=@(Model.Number-1)>&laquo; Previous</button>
-                        <input type="submit" name="pageNumber" class="paginator-button" id="1" value=@(0+Model.Number) />
-                        <input type="submit" name="pageNumber" class="paginator-button" id="2" value=@(1+Model.Number) />
+                        <button type="submit" name="pageNumber" class="paginator-button" value=@(Model.NumberOfPage-1)>&laquo; Previous</button>
+                        <input type="submit" name="pageNumber" class="paginator-button" id="1" value=@(0+Model.NumberOfPage) />
+                        <input type="submit" name="pageNumber" class="paginator-button" id="2" value=@(1+Model.NumberOfPage) />
+                        <input type="submit" name="pageNumber" class="paginator-button" id="3" value=@(2+Model.NumberOfPage) />
                         <strong class="paginator-button">&hellip;</strong>
-                        <input type="submit" name="pageNumber" class="paginator-button" id="3" value=@(3+Model.Number) />
-                        <input type="submit" name="pageNumber" class="paginator-button" id="4" value=@(4+Model.Number) />
-                        <input type="submit" name="pageNumber" class="paginator-button" id="5" value=@(5+Model.Number) />
-                        <input type="submit" name="pageNumber" class="paginator-button" id="6" value=@(6+Model.Number) />
+                        <input type="submit" name="pageNumber" class="paginator-button" id="4" value=@(4+Model.NumberOfPage) />
+                        <input type="submit" name="pageNumber" class="paginator-button" id="5" value=@(5+Model.NumberOfPage) />
                         <strong class="paginator-button">&hellip;</strong>
-                        <input type="submit" name="pageNumber" class="paginator-button" id="7" value=@(9+Model.Number) />
-                        <input type="submit" name="pageNumber" class="paginator-button" id="7" value=@(10+Model.Number) />
-                        <button type="submit" name="pageNumber" class="paginator-button" value=@(Model.Number+1)>Next &raquo;</button>
+                        <input type="submit" name="pageNumber" class="paginator-button" id="6" value=@(8+Model.NumberOfPage) />
+                        <input type="submit" name="pageNumber" class="paginator-button" id="7" value=@(9+Model.NumberOfPage) />
+                        <input type="submit" name="pageNumber" class="paginator-button" id="7" value=@(10+Model.NumberOfPage) />
+                        <button type="submit" name="pageNumber" class="paginator-button" value=@(Model.NumberOfPage+1)>Next &raquo;</button>
                     </div>
                 </form>
             </div>

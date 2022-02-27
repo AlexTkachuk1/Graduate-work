@@ -21,9 +21,9 @@
         var url = arrayImgSrc[currentIndex];
         var string = url.url;
 
-        mainBlock.find('.visible-image').attr('src', string)
-        mainBlock.find('.current').text(currentIndex + 1)
-        mainBlock.find('.maxCount').text(arrayImgSrc.length)
+        $('.visible-image').attr('src', string)
+        $('.current').text(currentIndex + 1)
+        $('.maxCount').text(arrayImgSrc.length)
     }
     function createButton(className, value) {
         var buttonBlock = $('<div>');
@@ -54,10 +54,8 @@
         mainBlock.append(sliderBlock);
     }
     function init(urls) {
-        mainBlock = $('.slider-my-good');
-        createHtml();
-        mainBlock.find('.my-slider .next').click(next);
-        mainBlock.find('.my-slider .previous').click(previous);
+        $('.next').click(next);
+        $('.previous').click(previous);
         arrayImgSrc = urls;
         updateImage();
     }
