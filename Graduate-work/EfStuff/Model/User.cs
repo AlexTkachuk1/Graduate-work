@@ -1,25 +1,31 @@
 ﻿using Graduate_work.EfStuff.Model;
+using System;
 using System.Collections.Generic;
 
 namespace Graduate_work.Model
 {
     public class User : BaseModel
-    {
+    { 
+        public bool ProfileIsBlocked { get; set; }=false;
         public string Login { get; set; }
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
 
         public string Password { get; set; }
 
-        public string DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         public string homeСountry { get; set; }
 
         public string homeСity { get; set; }
 
-        public int Tel { get; set; }
+        public string Tel { get; set; }
 
         public string Email { get; set; }
 
-        public string AvatarUrl { get; set; } = "/images/user avatar/avatar.gif";
+        public string AvatarUrl { get; set; } = "/images/demo/avatar.png";
 
         public Role Role { get; set; }
 

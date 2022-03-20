@@ -16,18 +16,20 @@ namespace Graduate_work.Services
             _webHostEnvironment = webHostEnvironment;
         }
 
-        public string GetTempDocxFilePath()
-        {
-            var fileName = $"{Guid.NewGuid()}.docx";
-            return Path.Combine(_webHostEnvironment.WebRootPath, "temp", fileName);
-        }
+        //public string GetTempDocxFilePath()
+        //{
+        //    var fileName = $"{Guid.NewGuid()}.docx";
+        //    return Path.Combine(_webHostEnvironment.WebRootPath, "temp", fileName);
+        //}
 
         public string GetFolderPath()
             => Path.Combine(_webHostEnvironment.WebRootPath, "images\\pictures");
-
+        public string GetFolderPathForAvatar()
+            => Path.Combine(_webHostEnvironment.WebRootPath, "images\\avatar");
+        public string GetPathForAvatar(Guid guid)
+            => Path.Combine(GetFolderPathForAvatar(), $"{guid}.png");
         public string GetPath(long id)
             => Path.Combine(GetFolderPath(), $"{id}.png");
-
         public string GetUrl(long id)
             => $"/images/pictures/{id}.png";
     }

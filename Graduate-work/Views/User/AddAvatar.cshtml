@@ -1,0 +1,13 @@
+﻿@model AddAvatarViewModel
+
+<form action="/User/AddAvatar" method="post" id="someForm" enctype="multipart/form-data">
+    <div>
+        Url: <input type="text" name="Url" />
+    </div>
+    <div>
+        @Graduate_work.Localize.language.Image <input type="file" name="File" />
+    </div>
+    <div>
+        <input type="submit" value=@Graduate_work.Localize.language.send />
+    </div>
+</form>

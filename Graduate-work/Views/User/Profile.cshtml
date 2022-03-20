@@ -1,4 +1,4 @@
-﻿@model UserViewModel 
+﻿@model ProfileViewModel 
 
 <html lang="">
 <head>
@@ -31,21 +31,23 @@
                 <h6>@Graduate_work.Localize.language.Layout_profile</h6>
                 <nav class="sdb_holder">
                     <ul> 
-                        <li><a href="#">@Graduate_work.Localize.language.Profile_AddAvatar</a></li>
+                        <li><a href="/User/AddAvatar">@Graduate_work.Localize.language.Profile_AddAvatar</a></li>
                         <li><a href="/User/Gallery">@Graduate_work.Localize.language.Layout_gallery</a></li>
                         <li><a href="#">@Graduate_work.Localize.language.Profile_LinkMail</a></li>
                         <li><a href="#">@Graduate_work.Localize.language.Profile_AddEvent</a></li>
+                        <li><a href="/User/AddData">AddData</a></li>
                     </ul>
-                </nav>
+                </nav> 
+                
                 <div class="sdb_holder">
                     <h6>@Graduate_work.Localize.language.Profile_About_the_user</h6>
                     <address>
-                        Полное имя<br>
-                        Страна где проживает<br>
-                        Город где проживает<br>
-                        <br>
-                        Tel: xxxx xxxx xxxxxx<br>
-                        Email: <a href="#">contact@domain.com</a>
+                        @Model.FirstName  @Model.LastName<br>
+                        <div>Phone: @Model.Tel</div>
+                        <div>Email:</div> <a href="#">@Model.Email</a>
+                        <div>DateOfBirth: @Model.DateOfBirth.ToString("d");</div>
+                        <div>HomeСountry: @Model.homeСountry</div>
+                        <div>HomeСity: @Model.homeСity</div>
                     </address>
                 </div>
 
@@ -53,10 +55,9 @@
 
             <div class="content three_quarter">
 
-                <h1>Ник пользователя</h1>
-                <img class="imgl borderedbox inspace-5" src="/images/user avatar/avatar.gif" alt="">
+                <h1>@Model.Login</h1>
+                <img class="imgl borderedbox inspace-5" src=@Model.AvatarUrl alt="">
                 <p></p>@*Статус пользователя*@
-                <h1>Table(s)</h1>
                 <div class="scrollable">
                     <table>
                         <thead>

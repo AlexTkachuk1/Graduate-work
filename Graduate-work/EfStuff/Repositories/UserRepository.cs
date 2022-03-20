@@ -1,4 +1,5 @@
 ﻿using Graduate_work.Model;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Graduate_work.EfStuff.Repositories
@@ -14,6 +15,17 @@ namespace Graduate_work.EfStuff.Repositories
         {
             return _dbSet
                 .SingleOrDefault(x => x.Login == login && x.Password == password);
+        }
+
+        public IEnumerable<User> GetAllUsers()
+        {
+            return _dbSet.Where(x => x.Login != "Admin").ToList();
+        }
+
+        public User GetByLogin(string login)
+        {
+            return _dbSet
+                .SingleOrDefault(x => x.Login == login);
         }
 
         public bool Exist(Role role)

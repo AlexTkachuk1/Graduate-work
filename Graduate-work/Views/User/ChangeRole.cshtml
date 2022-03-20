@@ -1,30 +1,31 @@
 ﻿@model ChangeRoleViewModel
-
-<div class="title">
-    @Graduate_work.Localize.language.ChangeUserRole:
-</div>
+<head>
+    <link href="~/css/styles.css" rel="stylesheet" type="text/css">
+</head>
 <form action="/User/ChangeRole" method="post">
     <div class="alert-info">
         @Graduate_work.Localize.language.UserController_ChangeRole_ChandeID
     </div>
 
     <div>
-        @Html.TextBoxFor(x => x.Id)
-        @Html.ValidationMessageFor(x => x.Id)
+        @Html.TextBoxFor(x => x.Login)
+        @Html.ValidationMessageFor(x => x.Login )
     </div>
 
     <div class="alert-info">
         @Graduate_work.Localize.language.UserController_ChangeRole_SelectRole
     </div>
 
-    <p>
-        <select size="2" multiple name="@nameof(ChangeRoleViewModel.Role)">
-            <option disabled>@Graduate_work.Localize.language.UserController_ChangeRole_Roles</option>
-            <option value="User">@Graduate_work.Localize.language.User</option>
-            <option value="Moderator">@Graduate_work.Localize.language.Moderator</option>
-        </select>
-        @Html.ValidationMessageFor(x => x.Role)
-    </p>
+    <div class="form_radio_group">
+        <div class="form_radio_group-item">
+            <input type="radio" id="radio-1" class="form_toggle-item" name="Role" value="User" checked />
+            <label for="radio-1">User</label>
+        </div>
+        <div class="form_radio_group-item">
+            <input type="radio" id="radio-2" class="form_toggle-item" name="Role" value="Moderator" />
+            <label for="radio-2">Moderator</label>
+        </div>
+    </div>
 
     <div class="submit">
         <input type="submit" value="@Graduate_work.Localize.language.send" />

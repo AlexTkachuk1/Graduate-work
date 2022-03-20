@@ -27,6 +27,11 @@ namespace Graduate_work.Controllers
 
         public IActionResult Gallery(int pageNumber = 1, int numberOfPictures = 12)
         {
+            var user = _userServis.GetCurrent();
+            if (user.ProfileIsBlocked == true)
+            {
+                return RedirectToAction("BlockedPage", "User");
+            }
             var _numberOfPictures = numberOfPictures;
             var displayedLinks = pageNumber;
             if (displayedLinks - 2 > 0)

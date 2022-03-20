@@ -137,7 +137,6 @@ C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\bin\Debug\net5.0\ru
 C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\GraduateWork.csproj.AssemblyReference.cache
 C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Graduate_work.Localize.language.resources
 C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Graduate_work.Localize.language.Ru.resources
 C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\GraduateWork.csproj.GenerateResource.cache
@@ -490,3 +489,8 @@ C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\bin\Debug\net5.0\Mi
 C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Razor\Views\User\AddData.cshtml.g.cs
+C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Razor\Views\User\AllUsersAndRoles.cshtml.g.cs
+C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Razor\Views\User\ChangeProfileIsBlocked.cshtml.g.cs
+C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Razor\Views\User\BlockedPage.cshtml.g.cs
+C:\Users\YuukiAsuna\source\repos\Graduate-work\Graduate-work\obj\Debug\net5.0\Razor\Views\User\AddAvatar.cshtml.g.cs

@@ -1,0 +1,35 @@
+﻿@model AddDataViewModel
+ 
+<h2>Заполните личные данные</h2>
+ 
+<form asp-action="AddData" asp-controller="User"  asp-antiforgery="true">
+    <div>
+        <div>
+            <label asp-for="FirstName"></label>
+            <input type="text" asp-for="FirstName" />
+        </div>
+        <div>
+            <label asp-for="LastName"></label>
+            <input type="text" asp-for="LastName" />
+        </div>
+        <div>
+            <label asp-for="Email"></label>
+            <input type="text" asp-for="Email" />
+        </div>
+        <div>
+            <label asp-for="Tel"></label>
+            <input type="text" asp-for="Tel" />
+        </div>
+        <div>
+            <label asp-for="homeСity"></label>
+            <input type="text" asp-for="homeСity" />
+        </div>
+        <div>
+            <label asp-for="homeСountry"></label>
+            <input type="text" asp-for="homeСountry" />
+        </div>
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+    </div>
+</form>

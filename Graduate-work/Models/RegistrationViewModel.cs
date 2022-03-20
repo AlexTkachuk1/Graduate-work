@@ -1,4 +1,6 @@
-﻿using Graduate_work.Model;
+﻿using Graduate_work.Controllers.AuthAttribute;
+using Graduate_work.Model;
+using Graduate_work.Models.CastomValidationAttribute;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -23,7 +25,8 @@ namespace Graduate_work.Models
         public string PasswordCopy { get; set; }
 
         [Required(ErrorMessage = "Не указана дата рождения")]
-        public string DateOfBirth { get; set; }
+        [DateOfBirth("01/01/1920 00:00:00", ErrorMessage = "Введите настоящую дату рождения")]
+        public DateTime DateOfBirth { get; set; }
 
         public Role Role { get; set; } = Role.User;
     }

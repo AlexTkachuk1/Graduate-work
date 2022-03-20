@@ -1,0 +1,24 @@
+﻿@model ProfileIsBlockedViewModel
+
+<head>
+    <link href="~/css/styles.css" rel="stylesheet" type="text/css">
+    <script src="~/js/checkBox.js"></script>
+</head>
+
+<h2>Set the user's ProfileIsBlocked status</h2>
+
+<form action="/User/ChangeProfileIsBlocked" method="post">
+    <div class="alert-info">
+        Login
+    </div>
+    <div>
+        @Html.TextBoxFor(x => x.Login)
+    </div>
+    <div>
+        @Html.CheckBoxFor(x => x.ProfileIsBlocked, new { @class = "toggle", @id = "check", @onclick="$(this).attr('value', this.checked ? 1 : 0)"})
+        <label for="check">ProfileIsBlocked status</label>
+    </div>
+    <div class="submit">
+        <input type="submit" value="@Graduate_work.Localize.language.send" />
+    </div>
+</form>

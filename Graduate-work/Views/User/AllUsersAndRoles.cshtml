@@ -1,0 +1,23 @@
+﻿@model List<UserRoleViewModel>
+
+<h2>@Graduate_work.Localize.language.ChangeUserRole</h2>
+
+<div>To change the user role<a href="/User/ChangeRole"> click here</a><div/>
+
+<div>To change the user's ProfileIsBlocked status<a href="/User/ChangeProfileIsBlocked"> click here</a><div/>
+
+<table>
+    <tr>
+        <th>Login</th>
+        <th>Role</th>
+        <th>ProfileIsBlocked</th>
+    </tr>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Login</td>
+            <td>@user.Role</td>
+            <td>@user.ProfileIsBlocked</td>
+        </tr>
+    }
+</table>
